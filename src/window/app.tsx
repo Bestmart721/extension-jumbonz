@@ -20,6 +20,8 @@ import {
   getAdvancedSettings,
   getCallHistories,
   getSettings,
+  saveAddvancedSettings,
+  saveSettings,
 } from "src/storage";
 
 import jambonz from "src/imgs/jambonz.svg";
@@ -71,10 +73,10 @@ export const WindowApp = () => {
         />
       ),
     },
-    {
-      title: "Settings",
-      content: <Settings />,
-    },
+    // {
+    //   title: "Settings",
+    //   content: <Settings />,
+    // },
   ];
 
   useEffect(() => {
@@ -82,6 +84,21 @@ export const WindowApp = () => {
 
     const urlParams = new URLSearchParams(window.location.search);
     setColorMode(urlParams.get("theme") ?? "dark");
+
+    saveSettings({
+      sipDomain: urlParams.get("jamboneClientUser") ? urlParams.get("jamboneClientUser") + ".sip.imash.io" : "",
+      sipServerAddress: "wss://sip.imash.io:8443/",
+      sipUsername: urlParams.get("jamboneClientUser") ?? "",
+      sipPassword: urlParams.get("jamboneClientPass") ?? "",
+      sipDisplayName: urlParams.get("jamboneClientUser") ?? "",
+    });
+
+    saveAddvancedSettings({
+      apiKey: urlParams.get("jamboneAccountToken") ?? "",
+      accountSid: urlParams.get("jamboneAccountSid") ?? "",
+      apiServer: "https://imash.io/api/v1",
+    });
+
   }, []);
 
   const onTabsChange = (i: number) => {
@@ -128,6 +145,7 @@ export const WindowApp = () => {
           </TabPanels>
         </Tabs>
       </Box>
+      {/* <Settings /> */}
       {/* <Center>
         <HStack spacing={1} mb={2} align="start">
           <Text fontSize="14px">Powered by</Text>

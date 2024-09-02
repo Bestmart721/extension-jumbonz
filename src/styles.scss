@@ -14,3 +14,42 @@
 .chakra-tabs__tab.css-yyfl4w[aria-selected="true"] {
   color: #fff !important;
 }
+
+
+
+p.chakra-text.css-sbx0ys {
+  display: none;
+}
+
+body.chakra-ui-dark {
+  background: #000;
+  border-left: 5px solid #1f1f1f;
+}
+
+.jambonz-drawer-open iframe {
+  width: 320px;
+  border-left: none !important;
+}
+
+body.chakra-ui-dark input.chakra-input.css-1e6yjfl {
+  background: #141414;
+}
+
+body.chakra-ui-dark button.chakra-button.css-bj9817 {
+  background: #141414;
+}
+
+body.chakra-ui-dark .css-1b0td9y {
+  background: #000;
+}
+
+body.chakra-ui-dark .css-yyfl4w[aria-selected="true"], body.chakra-ui-dark .css-yyfl4w[data-selected] {
+  background: #000;
+  border-top: 1px solid #3a3a3a;
+  border-right: 1px solid #3a3a3a;
+  border-left: 1px solid #3a3a3a;
+}
+
+body.chakra-ui-dark .css-yyfl4w {
+  background: #181818;
+}

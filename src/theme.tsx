@@ -1,15 +1,21 @@
 import { extendTheme } from "@chakra-ui/react";
 
+const urlParams = new URLSearchParams(window.location.search);
+
 const mainTheme = extendTheme({
+  // config: {
+  //   initialColorMode: urlParams.get("theme"),
+  //   useSystemColorMode: false
+  // },
   colors: {
     jambonz: {
       50: "#ffe1f1",
       100: "#ffb3c6",
-      200: "#fc839d",
-      300: "#fa5575",
+      200: "#d84a1b",
+      300: "#e87040",
       400: "#f8274e",
-      500: "#DA1C5C",
-      600: "#c60921",
+      500: "#d84a1b",
+      600: "#e87040",
       700: "#99081a",
       800: "#6c0714",
       900: "#44060d",

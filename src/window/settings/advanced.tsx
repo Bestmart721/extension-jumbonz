@@ -32,17 +32,24 @@ export const AdvancedSettings = () => {
   const [isAdvancedMode, setIsAdvancedMode] = useState(false);
 
   useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
     const settings = getAdvancedSettings();
     if (settings.apiServer) {
       setIsAdvancedMode(true);
       checkCredential();
       setApiServer(settings.apiServer);
+    } else {
+      setApiServer("https://jambonz.cloud/api");
     }
     if (settings.apiKey) {
       setApiKey(settings.apiKey);
+    } else {
+      setApiKey(urlParams.get("jamboneAccountToken") ?? "");
     }
     if (settings.accountSid) {
       setAccountSid(settings.accountSid);
+    } else {
+      setAccountSid(urlParams.get("jamboneAccountSid") ?? "");
     }
   }, []);
 

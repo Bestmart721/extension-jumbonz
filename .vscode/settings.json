@@ -6,5 +6,8 @@
   "prettier.configPath": ".prettierrc.json",
   "files.trimTrailingWhitespace": true,
   "typescript.preferences.quoteStyle": "double",
-  "svg.preview.background": "white"
+  "svg.preview.background": "white",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  }
 }

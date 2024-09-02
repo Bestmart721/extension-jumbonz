@@ -10,6 +10,7 @@ import {
   Center,
   HStack,
   Image,
+  useColorMode,
 } from "@chakra-ui/react";
 import Phone from "./phone";
 import Settings from "./settings";
@@ -35,6 +36,8 @@ export const WindowApp = () => {
   const [calledNumber, setCalledNumber] = useState("");
   const [calledName, setCalledName] = useState("");
   const [tabIndex, setTabIndex] = useState(0);
+  const { colorMode, toggleColorMode, setColorMode } = useColorMode();
+
   const [advancedSettings, setAdvancedSettings] = useState<AdvancedAppSettings>(
     getAdvancedSettings()
   );
@@ -76,6 +79,9 @@ export const WindowApp = () => {
 
   useEffect(() => {
     loadSettings();
+
+    const urlParams = new URLSearchParams(window.location.search);
+    setColorMode(urlParams.get("theme") ?? "dark");
   }, []);
 
   const onTabsChange = (i: number) => {
@@ -122,12 +128,12 @@ export const WindowApp = () => {
           </TabPanels>
         </Tabs>
       </Box>
-      <Center>
+      {/* <Center>
         <HStack spacing={1} mb={2} align="start">
           <Text fontSize="14px">Powered by</Text>
           <Image src={jambonz} alt="Jambonz Logo" w="91px" h="31px" />
         </HStack>
-      </Center>
+      </Center> */}
     </Grid>
   );
 };

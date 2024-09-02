@@ -20,10 +20,17 @@ import { DEFAULT_TOAST_DURATION } from "src/common/constants";
 
 export const BasicSettings = () => {
   const [sipDomain, setSipDomain] = useState("");
-  const [sipServerAddress, setSipServerAddress] = useState("");
+  const [sipServerAddress, setSipServerAddress] = useState("wss://sip.imash.io:8443/");
   const [sipUsername, setSipUsername] = useState("");
   const [sipPassword, setSipPassword] = useState("");
   const [sipDisplayName, setSipDisplayName] = useState("");
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    setSipDomain(urlParams.get("jamboneClientUser") ? urlParams.get("jamboneClientUser") + ".sip.imash.io" : "");
+    setSipUsername(urlParams.get("jamboneClientUser") ?? "");
+    setSipPassword(urlParams.get("jamboneClientPass") ?? "");
+  }, []);
 
   const toast = useToast();
 
@@ -147,7 +154,7 @@ export const BasicSettings = () => {
 
           {/* <Spacer /> */}
           <HStack spacing={1}>
-            <Image src={ResetIcon} w="30px" h="30px" />
+            <Image style={{ fill: "white" }} src={ResetIcon} w="30px" h="30px" />
             <Text fontSize="14px" onClick={resetSetting} cursor="pointer">
               Reset settings
             </Text>

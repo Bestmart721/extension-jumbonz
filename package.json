@@ -14,9 +14,10 @@
     "framer-motion": "^10.16.4",
     "fuse.js": "^6.6.2",
     "google-libphonenumber": "^3.2.33",
-    "jssip": "^3.10.0",
+    "jssip": "3.10.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "typescript": "^5.5.4",
     "uuid": "^9.0.1",
     "web-vitals": "^2.1.4"
   },

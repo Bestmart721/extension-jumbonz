@@ -1,7 +1,16 @@
-.container {
-  width: 280px;
-  height: 480px;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+// .container {
+//   width: 280px;
+//   height: 480px;
+//   font-family: Arial, sans-serif;
+//   margin: 0;
+//   padding: 0;
+// }
+
+
+.chakra-tabs__tab.css-yyfl4w {
+  color: #000 !important;
+}
+
+.chakra-tabs__tab.css-yyfl4w[aria-selected="true"] {
+  color: #fff !important;
 }

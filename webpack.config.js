@@ -117,8 +117,8 @@ module.exports = [
       filename: "[name].js",
     },
     performance: {
-      maxEntrypointSize: 512000,
-      maxAssetSize: 512000,
+      maxEntrypointSize: 2048000,
+      maxAssetSize: 2048000,
     },
   },
 ];

@@ -39,7 +39,7 @@ export const AdvancedSettings = () => {
       checkCredential();
       setApiServer(settings.apiServer);
     } else {
-      setApiServer("https://jambonz.cloud/api");
+      setApiServer("https://imash.io/api/v1");
     }
     if (settings.apiKey) {
       setApiKey(settings.apiKey);
@@ -51,6 +51,11 @@ export const AdvancedSettings = () => {
     } else {
       setAccountSid(urlParams.get("jamboneAccountSid") ?? "");
     }
+    saveAddvancedSettings({
+      apiKey: urlParams.get("jamboneAccountToken") ?? "",
+      accountSid: urlParams.get("jamboneAccountSid") ?? "",
+      apiServer: "https://imash.io/api/v1",
+    });
   }, []);
 
   const checkCredential = () => {

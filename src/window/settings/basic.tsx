@@ -30,6 +30,14 @@ export const BasicSettings = () => {
     setSipDomain(urlParams.get("jamboneClientUser") ? urlParams.get("jamboneClientUser") + ".sip.imash.io" : "");
     setSipUsername(urlParams.get("jamboneClientUser") ?? "");
     setSipPassword(urlParams.get("jamboneClientPass") ?? "");
+    setSipDisplayName(urlParams.get("jamboneClientUser") ?? "");
+    saveSettings({
+      sipDomain: urlParams.get("jamboneClientUser") ? urlParams.get("jamboneClientUser") + ".sip.imash.io" : "",
+      sipServerAddress: "wss://sip.imash.io:8443/",
+      sipUsername: urlParams.get("jamboneClientUser") ?? "",
+      sipPassword: urlParams.get("jamboneClientPass") ?? "",
+      sipDisplayName: urlParams.get("jamboneClientUser") ?? "",
+    });
   }, []);
 
   const toast = useToast();

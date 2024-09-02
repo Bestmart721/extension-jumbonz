@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
 import mainTheme from "./theme";
 import WindowApp from "./window/app";
-import "./styles.scss";
+import "./styles.css";
 
 // This file is being used only for dev.
 const root = document.createElement("div");
